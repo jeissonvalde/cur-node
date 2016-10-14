@@ -1,8 +1,5 @@
 var express = require('express');
-const app = express();
-
-// ___ Objeto de votos (por memoria)
-const votes = {} 
+var app = express();
 
 // ___ Read statics files with express
 app.use(express.static('public'));
