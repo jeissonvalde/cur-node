@@ -1,32 +1,21 @@
-var http = require('http');
-var assets = require('./assets');
-/* var ip = java.net.InetAddress.getLocalHost().getHostAddress ();
-console.log('Tu IP es: "' + ip + '"'); */
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function (require, response) {
-	console.log('He recibido un require a ' + require.url );
-	switch (require.url) {
-		case '/':
-		assets.serveStatic('index.html', function (err, content) {
-			response.end(content);
-		})
-		  break
-		case '/app.js':
-		assets.serveStatic('app.js', function (err, content) {
-			response.end(content);
-		})
-		  break
-		case '/app.css':
-		assets.serveStatic('app.css', function (err, content) {
-			response.end(content);
-		})
-		  break
-		default:
-		response.statusCode = 404;
-		response.end('Not found');
-	}
+// ___ Read statics files with express
+app.use(express.static('public'));
+
+// ___ GET /votes
+app.get('/votes', function (req, res) {
+	res.json([])
+});
+// ___ POST /vote/<id>
+app.post('/vote/:id', function (req, res) {
+
 });
 
-server.listen(4280, function() {
-	console.log('Servidor iniciado correctamente. \n (Escuchando el puerto 4280)');
+// ___ DELETE /votes/<id>
+
+// ___ Puerto listen de la app
+app.listen(4281, function() {
+	console.log('Servidor iniciado correctamente. \n (Escuchando el puerto 4281 con Express)');
 });
