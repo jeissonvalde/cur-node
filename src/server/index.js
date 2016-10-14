@@ -8,12 +8,17 @@ const votes = {}
 app.use(express.static('public'));
 
 // ___ GET /votes
-app.get('/votes', function (req, res) {
-	res.json([])
+app.get('/votes', (req, res) => {
+	res.json(votes);
 });
 // ___ POST /vote/<id>
-app.post('/vote/:id', function (req, res) {
-
+app.post('/vote/:id', (req, res) => {
+	let id = req.params.id;
+	if (votes[id] === undefined) {
+		votes[id] = 1;
+	} else {
+		votes[id] = votes[id] + 1;
+	}
 });
 
 // ___ DELETE /votes/<id>
