@@ -1,0 +1,17 @@
+commit 787a185c80e989ce1ee96e8ac3f7dc0db1b28f6b
+Author: --unset <--unset>
+Date:   Thu Oct 13 19:41:09 2016 -0500
+
+    Nueva estructura de servidor (con express)
+
+commit 3bf98d0e5782456b6514cb126af92eab9af81297
+Author: --unset <--unset>
+Date:   Thu Oct 13 19:25:48 2016 -0500
+
+    Se instala express a node
+
+commit bc9dc6643e5e150fb91a632c9a9c828396be39e4
+Author: --unset <--unset>
+Date:   Thu Oct 13 19:14:58 2016 -0500
+
+    Se inicia el repositorio
